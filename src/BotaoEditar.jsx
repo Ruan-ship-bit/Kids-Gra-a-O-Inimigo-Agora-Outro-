@@ -1,14 +1,15 @@
 import "./BotaoEditar.css"
 
 
-function BotaoEditar({ onClick }) {
+function BotaoEditar(props) {
   return (
     <button
       type="button"
       className="botao-editar"
-      onClick={onClick}
+      onClick={props.onclick}
       aria-label="Editar"
       title="Editar"
+      id= {props.id}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

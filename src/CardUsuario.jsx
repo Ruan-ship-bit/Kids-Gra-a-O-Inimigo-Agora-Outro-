@@ -7,12 +7,16 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
   const [janela, setJanela] = useState(false);
   return (
     <div className="card-usuario">
-      <img
+    <div className='container-flexbox'>
+        <img
         className="card-usuario-imagem"
         src={imagem}
         alt="Foto do usuário"
         draggable= "false"
       />
+        <BotaoEditar id="botao-que-fica-ao-lado-da-imagem"/>
+    </div>
+      
 
       <div className="card-usuario-informacoes">
         <div className='container-flexbox'>

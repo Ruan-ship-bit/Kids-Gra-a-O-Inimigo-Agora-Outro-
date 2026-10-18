@@ -128,3 +128,7 @@
     min-width: 0;
   }
 
+#botao-que-fica-ao-lado-da-imagem {
+    position: relative;
+    bottom:60px;
+}
