@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './CardUsuario.css';
 import BotaoEditar from './BotaoEditar';
+import Modal from './Modal';
 
 function CardUsuario({ imagem, cep, email, dataNascimento }) {
   const [janela, setJanela] = useState(false);
@@ -14,9 +15,10 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
         alt="Foto do usuário"
         draggable= "false"
       />
-        <BotaoEditar id="botao-que-fica-ao-lado-da-imagem"/>
+        <BotaoEditar id="botao-que-fica-ao-lado-da-imagem" onclick= {() => setJanela(true)}/>
+        
     </div>
-      
+      {janela && <Modal tipo= "image" onclose = {() => setJanela(false)}/>  }
 
       <div className="card-usuario-informacoes">
         <div className='container-flexbox'>
@@ -41,7 +43,9 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
         
         
       </div>
+      
     </div>
+   
   );
 }
 

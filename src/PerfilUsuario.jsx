@@ -10,6 +10,7 @@ function PerfilUsuario() {
   return (
     
    <div className="perfil-pagina">
+        
       <header className="perfil-cabecalho">
         <div className="perfil-marca">
           <span className="perfil-marca-simbolo">K</span>
