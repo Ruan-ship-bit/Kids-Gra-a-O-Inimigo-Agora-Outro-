@@ -1,0 +1,119 @@
+
+.card-usuario {
+  width: 84vw;
+  max-width: 1200px;
+  min-height: 68vh;
+  box-sizing: border-box;
+
+  margin: 6vh auto;
+  padding: 5vh 5vw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4vh;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #eff6ff 55%,
+    #fff3e8 100%
+  );
+
+  border: 1px solid #bfdbfe;
+  border-top: 6px solid #f97316;
+  border-radius: 2vw;
+
+  box-shadow:
+    0 2vh 5vh rgba(30, 64, 175, 0.12),
+    0 1vh 2vh rgba(249, 115, 22, 0.08);
+}
+
+.card-usuario-imagem {
+  width: clamp(120px, 14vw, 200px);
+  height: clamp(120px, 14vw, 200px);
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 0.4vw solid #3b82f6;
+  outline: 0.5vw solid #ffedd5;
+  outline-offset: 0.4vw;
+
+  box-shadow: 0 1vh 3vh rgba(37, 99, 235, 0.2);
+}
+
+.card-usuario-informacoes {
+  width: 100%;
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+
+  overflow-wrap: anywhere;
+}
+
+.card-usuario-informacoes p {
+  margin: 0;
+  padding: 2.5vh 2vw;
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #bfdbfe;
+  border-left: 0.45vw solid #3b82f6;
+  border-radius: 1vw;
+
+  color: #334155;
+  font-size: clamp(1rem, 1.3vw, 1.25rem);
+  line-height: 1.6;
+
+  box-shadow: 0 0.5vh 1.5vh rgba(30, 64, 175, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card-usuario-informacoes p:hover {
+  background-color: #fff7ed;
+  border-color: #fdba74;
+  border-left-color: #f97316;
+  transform: translateX(0.4vw);
+}
+
+.card-usuario-informacoes strong {
+  color: #1d4ed8;
+}
+
+
+
+  .card-usuario-imagem {
+    width: 38vw;
+    height: 38vw;
+
+    max-width: 160px;
+    max-height: 160px;
+
+    border-width: 3px;
+    outline-width: 3px;
+    outline-offset: 3px;
+  }
+
+  .card-usuario-informacoes {
+    gap: 2vh;
+  }
+
+  .card-usuario-informacoes p {
+    padding: 2vh 4vw;
+    border-left-width: 4px;
+    border-radius: 3vw;
+    font-size: 1rem;
+  }
+
+  .card-usuario-informacoes p:hover {
+    transform: none;
+  }
+
+
