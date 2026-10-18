@@ -4,10 +4,12 @@ import './index.css'
 import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from "react-router-dom"
+import PerfilUsuario from './PerfilUsuario.jsx'
 
 const Router = createBrowserRouter([
 
-  {path: "/home", element: <App/> }
+  {path: "/home", element: <App/> },
+  {path: "/user", element: <PerfilUsuario/> }
   
 ]);
 

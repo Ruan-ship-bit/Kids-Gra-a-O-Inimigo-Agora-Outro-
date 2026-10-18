@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Cabecalho.css";
 import React from 'react'
+import { Link } from "react-router-dom"
 // ---------- Ícones SVG ----------
 const IconeBusca = (props) => (
   <svg
@@ -90,14 +91,15 @@ export default function Cabecalho(props) {
         </button>
 
        
-        <button
-          type="button"
+        <Link
+          to={"/user"}
+          //type="button"
           className="cabecalho__botao"
-          onClick={aoClicarUsuario}
+          //onClick={aoClicarUsuario}
           aria-label="Minha conta"
         >
           <IconeUsuario />
-        </button>
+        </Link>
 
     </header>
   )
