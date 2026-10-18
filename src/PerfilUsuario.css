@@ -1,0 +1,153 @@
+
+.perfil-pagina {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 5vh 6vw 3vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 95% 5%,
+      rgba(255, 138, 36, 0.09),
+      transparent 25%
+    ),
+    linear-gradient(145deg, #f8fbff, #eef4ff);
+
+  color: #1e293b;
+}
+
+.perfil-cabecalho {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 3vh;
+
+  animation: perfil-entrada 0.5s ease both;
+}
+
+.perfil-marca {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  margin-bottom: 5vh;
+}
+
+.perfil-marca-simbolo {
+  width: clamp(40px, 3.5vw, 52px);
+  height: clamp(40px, 3.5vw, 52px);
+
+  display: grid;
+  place-items: center;
+
+  background: #2455d6;
+  color: #ffffff;
+  border-radius: 14px 14px 14px 4px;
+
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: 0 5px 12px rgba(36, 85, 214, 0.18);
+}
+
+.perfil-marca-nome {
+  color: #183b91;
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.perfil-marca-nome span {
+  color: #f07818;
+}
+
+.perfil-titulo {
+  text-align: center;
+}
+
+.perfil-etiqueta {
+  display: inline-block;
+  padding: 0.7vh 1rem;
+
+  background: #e3edff;
+  color: #2455d6;
+  border-radius: 999px;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.perfil-titulo h1 {
+  margin: 1.5vh 0 1vh;
+
+  color: #183b91;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.perfil-titulo p {
+  max-width: 600px;
+  margin: 0 auto;
+
+  color: #64748b;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.7;
+}
+
+.perfil-conteudo {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  animation: perfil-entrada 0.65s ease both;
+}
+
+.perfil-rodape {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: auto;
+  padding-top: 4vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.perfil-rodape span:first-child {
+  color: #2455d6;
+  font-weight: 700;
+}
+
+.perfil-ponto {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f07818;
+}
+
+@keyframes perfil-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

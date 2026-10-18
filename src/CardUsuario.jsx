@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import './CardUsuario.css';
+import BotaoEditar from './BotaoEditar';
 
 function CardUsuario({ imagem, cep, email, dataNascimento }) {
   const [janela, setJanela] = useState(false);
@@ -14,17 +15,27 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
       />
 
       <div className="card-usuario-informacoes">
-        <p>
-          <strong>CEP:</strong> {cep}
-        </p>
+        <div className='container-flexbox'>
+            <p>
+                <strong>CEP:</strong> {cep}
+            </p>
+            <BotaoEditar/>
+        </div>
+        <div className='container-flexbox'>
+            <p>
+                <strong>E-mail:</strong> {email}
+            </p>
+            <BotaoEditar/>
+        </div>
 
-        <p>
-          <strong>E-mail:</strong> {email}
-        </p>
-
-        <p>
-          <strong>Data de nascimento:</strong> {dataNascimento}
-        </p>
+        <div className='container-flexbox'>
+            <p>
+                <strong>Data de nascimento:</strong> {dataNascimento}
+            </p>
+            <BotaoEditar/>
+        </div>
+        
+        
       </div>
     </div>
   );

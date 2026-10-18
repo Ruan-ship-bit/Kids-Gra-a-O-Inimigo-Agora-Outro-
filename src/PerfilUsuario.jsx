@@ -9,14 +9,27 @@ function PerfilUsuario() {
   }, [])
   return (
     
-    <div className="perfil-pagina">
-      <div className="perfil-decoracao perfil-decoracao-azul"></div>
-      <div className="perfil-decoracao perfil-decoracao-laranja"></div>
-
+   <div className="perfil-pagina">
       <header className="perfil-cabecalho">
-        <span className="perfil-etiqueta">ÁREA PESSOAL</span>
-        <h1>Meu perfil</h1>
-        <p>Suas informações, organizadas em um só lugar.</p>
+        <div className="perfil-marca">
+          <span className="perfil-marca-simbolo">K</span>
+          <span className="perfil-marca-nome">
+            Kids<span>Graça</span>
+          </span>
+        </div>
+
+        <div className="perfil-titulo">
+          <span className="perfil-etiqueta">
+            ÁREA DO CLIENTE
+          </span>
+
+          <h1>Meu perfil</h1>
+
+          <p>
+            Gerencie suas informações e mantenha
+            seus dados sempre atualizados.
+          </p>
+        </div>
       </header>
 
       <section className="perfil-conteudo">
@@ -24,9 +37,9 @@ function PerfilUsuario() {
       </section>
 
       <footer className="perfil-rodape">
-        <span>Minha conta</span>
+        <span>KidsGraça</span>
         <span className="perfil-ponto"></span>
-        <span>Seus dados em um só lugar</span>
+        <span>Sua próxima diversão começa aqui.</span>
       </footer>
     </div>
   )

@@ -116,4 +116,15 @@
     transform: none;
   }
 
+  .container-flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .container-flexbox p {
+    flex: 1;
+    min-width: 0;
+  }
 
