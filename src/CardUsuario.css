@@ -87,6 +87,27 @@
   color: #1d4ed8;
 }
 
+.card-usuario-informacoes input {
+   /* Remove a "caixa" do input */
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #1d4ed8;
+  /* Fusão visual e alinhamento de texto */
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  padding: 0;
+  margin: 0 0 0 5px; 
+  display: inline-block; 
+  flex: 1;           /* Faz o input preencher o resto da linha sem pular */
+  min-width: 60ch;
+  
+  
+  
+}
+
 
 
   .card-usuario-imagem {

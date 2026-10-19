@@ -58,7 +58,7 @@ const IconeUsuario = (props) => (
   </svg>
 );
  
-
+//SVG é nada mais do que um formato de imagem
 
 
 export default function Cabecalho(props) {

@@ -8,7 +8,7 @@ function PerfilUsuario() {
     document.title = "Perfil do Usuário";
   }, [])
   return (
-    
+    //header, spann, footer e section são tags semanticas, na pratica são divs com outros nomes
    <div className="perfil-pagina">
         
       <header className="perfil-cabecalho">
