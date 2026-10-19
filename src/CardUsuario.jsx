@@ -134,7 +134,7 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
                 <strong>CEP: {conteudo1} </strong>
                 
             </p>
-            <BotaoEditar onclick = {() => iniciarEdicao("cep", cep)}/>
+            <BotaoEditar onclick = {() => iniciarEdicao("cep", valorCep)}/>
             {  }
         </div>
         {/*Campo do Email */}
@@ -142,14 +142,14 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
             <p>
                 <strong>E-mail: {conteudo2}</strong> 
             </p>
-            <BotaoEditar onclick = {() => iniciarEdicao("email", email)}/>
+            <BotaoEditar onclick = {() => iniciarEdicao("email", valorEmail)}/>
         </div>
 
         <div className='container-flexbox'>
             <p>
                 <strong>Data de nascimento: {conteudo3}</strong> 
             </p>
-            <BotaoEditar onclick = {() => iniciarEdicao("data", dataNascimento)}/>
+            <BotaoEditar onclick = {() => iniciarEdicao("data", valorData)}/>
         </div>
         
         
