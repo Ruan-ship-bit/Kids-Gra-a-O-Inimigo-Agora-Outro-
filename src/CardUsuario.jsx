@@ -11,11 +11,14 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
   const [valorCep, setValorCep] = useState(cep);
   const [valorEmail, setValorEmail] = useState(email);
   const [valorData, setValorData] = useState(dataNascimento);
+  const [valorImagem, setValorImagem] = useState(imagem)
   const [edicao, setEdicao] = useState(null);
-  const [valor, setValor] = useState(null)
+  const [valor, setValor] = useState(null);
+  const [urlTemp, setUrlTemp] = useState(null);
   let conteudo1 = valorCep;
   let conteudo2 = valorEmail;
   let conteudo3 = valorData;
+  let conteudo4 = (<> </>);
 
   const formatarData = (dataAmericana) => {
     let ano = dataAmericana.slice(0, 4);
@@ -25,7 +28,7 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
     return dia + "/" + mes + "/" + ano;
   }
 
-  const Alteracao = (event) => {
+  const alteracaoComum = (event) => {
     setValor(event.target.value);
   }
 
@@ -54,6 +57,8 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
         case "data":
 
           setValorData(formatarData(valor));
+          break;
+       
           
       }
       setEdicao(null); // Fecha o input
@@ -61,26 +66,48 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
   };
 
 
-  
+  const alteracaoImagem = (event) => {
+    if(event.target.files[0]) {
+        let url = URL.createObjectURL(event.target.files[0])  // <-- Ela retorna um array então acessamos o primeiro elemneto deste array
+        setValorImagem(url); //a função URL.createObjectURL numa url temporária
+        setUrlTemp(url);
+        setEdicao(null)
+    }
+      
+      
+  }
     
   
-
+//abrindo o estado de edição
   switch(edicao) {
     case "cep": 
-      conteudo1 = (<input type='text' value={valor} onChange={Alteracao} id='cep' placeholder='Pode Digitar. Aperte ENTER para Salvar e Esc para Cancelar.' onKeyDown={lidarComTeclado}/>
+      conteudo1 = (<input type='text' value={valor} onChange={alteracaoComum} id='cep' placeholder='Pode Digitar. Aperte ENTER para Salvar e Esc para Cancelar.' onKeyDown={lidarComTeclado}/>
         
       );
       break;
     case "email": 
-      conteudo2 = (<input type='email' value={valor} onChange={Alteracao} id='email' placeholder='Pode Digitar. Aperte ENTER para Salvar e Esc para Cancelar.' onKeyDown={lidarComTeclado}/>);
+      conteudo2 = (<input type='email' value={valor} onChange={alteracaoComum} id='email' placeholder='Pode Digitar. Aperte ENTER para Salvar e Esc para Cancelar.' onKeyDown={lidarComTeclado}/>);
       break;
     case "data": 
-      conteudo3 = (<input type='date' value={valor} onChange={Alteracao} id='data' onKeyDown={lidarComTeclado} />);
+      conteudo3 = (<input type='date' value={valor} onChange={alteracaoComum} id='data' onKeyDown={lidarComTeclado} />);
       break;
-   
+    case "imagem":
+      conteudo4 = (
+      <>
+         <input type='file'  id='imagemUsuarioEntrada' onChange={alteracaoImagem}/>
+         <button type="button" onClick= {() => setEdicao(null)} id='cancelar-edicao-imagem'> × </button>
+      </> )
+     
 
   }
 
+  useEffect(() => {
+  return () => {
+    if (urlTemp) {
+      URL.revokeObjectURL(urlTemp);
+    }
+  };
+}, [urlTemp]);
  
 
   return (
@@ -89,12 +116,13 @@ function CardUsuario({ imagem, cep, email, dataNascimento }) {
     <div className='container-flexbox'>
         <img
         className="card-usuario-imagem"
-        src={imagem}
+        src={valorImagem}
         alt="Foto do usuário"
         draggable= "false"
         
       />
-        <BotaoEditar id="botao-que-fica-ao-lado-da-imagem" onclick= {() => setJanela("imagem")}/>
+        {conteudo4}
+        <BotaoEditar id="botao-que-fica-ao-lado-da-imagem" onclick= {() => iniciarEdicao("imagem", imagem)}/>
         { }
     </div>
       

@@ -34,7 +34,7 @@ function PerfilUsuario() {
       </header>
 
       <section className="perfil-conteudo">
-        <CardUsuario />
+        <CardUsuario  imagem={"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F7855%2F7855833.png&f=1&nofb=1&ipt=a1b2de4e873e8f3db1b03956fad9de69366462ec0a6ba1cd996569c971eef8c1&ipo=images"}/>
       </section>
 
       <footer className="perfil-rodape">
