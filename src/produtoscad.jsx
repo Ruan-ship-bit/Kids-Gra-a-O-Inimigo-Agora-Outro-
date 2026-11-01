@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './produtoscad.css';
 
+
 // Componente reutilizável: recebe qualquer "produto" via props.
 export default function Produtoscad({ produto, onAdicionar }) {
   const [hover, setHover] = useState(false); // controla o hover

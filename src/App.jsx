@@ -2,7 +2,10 @@ import { useState } from 'react'
 import { useEffect } from 'react';
 import './App.css'
 import Cabecalho from './Cabecalho'
-import  produtoscad from './produtoscad'
+import  Produtoscad from './produtoscad'
+import { ListaProdutos } from './dados/projetos';
+
+
 function App() {
 
   function adicionar(produto) {alert(`Você adicionou: ${produto.nome}`);}
@@ -15,7 +18,7 @@ function App() {
       <div>
         <Cabecalho/>
         <main className="lista">
-      {products.map((p) => (
+      {ListaProdutos.map((p) => (
         <Produtoscad
           key={p.id}
           produto={p}
