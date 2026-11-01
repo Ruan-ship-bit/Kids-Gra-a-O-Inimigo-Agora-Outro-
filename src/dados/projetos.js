@@ -1,4 +1,4 @@
-export const products = [
+export const ListaProdutos = [
   {
     id: 1,
     nome: "Fantasia Infantil Princesa Rapunzel Enrolados Vestido Luxo",
