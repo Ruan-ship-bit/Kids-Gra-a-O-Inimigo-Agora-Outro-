@@ -17,6 +17,47 @@
   }
 }
 
+.lista {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 235px), 1fr)
+  );
+
+  align-items: stretch;
+
+  gap: clamp(18px, 2vw, 28px);
+
+  width: 100%;
+  max-width: 1500px;
+
+  min-height: calc(100vh - 94px);
+
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 55px);
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(59, 130, 246, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 90%,
+      rgba(249, 115, 22, 0.07),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #f8fbff,
+      #f1f5fc
+    );
+}
 .hero {
   position: relative;
 
