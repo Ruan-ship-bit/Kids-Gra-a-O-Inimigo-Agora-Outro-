@@ -8,7 +8,7 @@ import PerfilUsuario from './PerfilUsuario.jsx'
 
 const Router = createBrowserRouter([
 
-  {path: "/home", element: <App/> },
+  {path: "/", element: <App/> },
   {path: "/user", element: <PerfilUsuario/> }
   
 ]);
