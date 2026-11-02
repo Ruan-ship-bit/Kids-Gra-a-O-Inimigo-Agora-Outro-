@@ -1,0 +1,61 @@
+
+.avaliacao {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #ddd;
+}
+
+.avaliacao h4 {
+  margin-bottom: 8px;
+}
+
+.avaliacao__estrelas {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.estrela {
+  background: none;
+  border: none;
+  font-size: 25px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+.estrela.selecionada {
+  color: #ffc107;
+}
+
+.avaliacao textarea {
+  width: 100%;
+  min-height: 65px;
+  padding: 8px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.avaliacao form button {
+  margin-top: 8px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+}
+
+.avaliacao__lista {
+  margin-top: 12px;
+}
+
+.avaliacao__lista article {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.avaliacao__nota {
+  color: #ffc107;
+  font-size: 20px;
+}

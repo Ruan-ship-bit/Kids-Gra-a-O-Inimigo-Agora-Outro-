@@ -1,0 +1,251 @@
+
+.pagina-carrinho {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1500px;
+  min-height: calc(100vh - 94px);
+
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 55px);
+
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 5% 5%,
+      rgba(59, 130, 246, 0.07),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 90%,
+      rgba(249, 115, 22, 0.07),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      #f8fbff,
+      #f1f5fc
+    );
+}
+
+.pagina-carrinho h1 {
+  color: #26354d;
+  font-size: clamp(26px, 4vw, 36px);
+  margin: 0;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dce4ef;
+}
+
+.lista-carrinho {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(min(100%, 300px), 1fr)
+  );
+  align-items: stretch;
+  gap: clamp(18px, 2vw, 28px);
+  width: 100%;
+}
+
+.item-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 24px;
+  border-radius: 14px;
+
+  background: #ffffff;
+  border: 2px solid transparent;
+
+  box-shadow: 0 4px 15px rgba(30, 50, 80, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.item-carrinho:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.35);
+  box-shadow: 0 8px 22px rgba(30, 50, 80, 0.12);
+}
+
+.item-carrinho h3 {
+  color: #26354d;
+  font-size: 19px;
+  margin: 0;
+}
+
+.item-carrinho p {
+  color: #64748b;
+  font-size: 15px;
+  margin: 0;
+}
+
+.quantidade-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.quantidade-carrinho span {
+  min-width: 35px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #26354d;
+}
+
+.quantidade-carrinho button {
+  width: 36px;
+  height: 36px;
+
+  border: 2px solid transparent;
+  border-radius: 7px;
+
+  color: var(--accent);
+  background: var(--accent-bg);
+
+  font-size: 20px;
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s,
+    transform 0.2s;
+}
+
+.quantidade-carrinho button:hover {
+  border-color: var(--accent-border);
+  transform: scale(1.05);
+}
+
+.quantidade-carrinho button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.quantidade-carrinho button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.item-carrinho > button {
+  align-self: flex-start;
+
+  padding: 9px 15px;
+  margin-top: 5px;
+
+  color: #dc4444;
+  background: #fff1f1;
+
+  border: 1px solid #ffd4d4;
+  border-radius: 7px;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.item-carrinho > button:hover {
+  background: #ffe0e0;
+  border-color: #f5aaaa;
+}
+
+.resumo-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  width: 100%;
+  max-width: 450px;
+  margin-left: auto;
+
+  padding: 26px;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #dce4ef;
+  border-radius: 14px;
+
+  box-shadow: 0 5px 18px rgba(30, 50, 80, 0.07);
+}
+
+.resumo-carrinho h2 {
+  color: #26354d;
+  font-size: 21px;
+  margin: 0;
+}
+
+.resumo-carrinho h3 {
+  color: #2563eb;
+  font-size: 24px;
+  margin: 0;
+}
+
+.resumo-carrinho button {
+  padding: 12px 18px;
+
+  color: #ffffff;
+  background: #2563eb;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background 0.3s,
+    transform 0.2s;
+}
+
+.resumo-carrinho button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.resumo-carrinho button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.pagina-carrinho > p {
+  padding: 35px;
+  text-align: center;
+
+  color: #64748b;
+  background: #ffffff;
+
+  border: 1px solid #dce4ef;
+  border-radius: 14px;
+
+  font-size: 17px;
+}
+
+@media (max-width: 600px) {
+  .pagina-carrinho {
+    padding: 24px 16px;
+    gap: 20px;
+  }
+
+  .lista-carrinho {
+    grid-template-columns: 1fr;
+  }
+
+  .item-carrinho {
+    padding: 19px;
+  }
+
+  .resumo-carrinho {
+    max-width: 100%;
+    margin-left: 0;
+  }
+}
