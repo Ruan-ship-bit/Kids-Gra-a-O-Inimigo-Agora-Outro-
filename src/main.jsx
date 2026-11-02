@@ -5,17 +5,23 @@ import App from './App.jsx'
 import { RouterProvider } from 'react-router-dom'
 import { createBrowserRouter } from "react-router-dom"
 import PerfilUsuario from './PerfilUsuario.jsx'
+import Carrinho from './Carrinho.jsx' 
+import { CarrinhoProvider } from './ContextoCarrinho.jsx'
+
 
 const Router = createBrowserRouter([
 
   {path: "/", element: <App/> },
-  {path: "/user", element: <PerfilUsuario/> }
+  {path: "/user", element: <PerfilUsuario/> },
+  { path: "/carrinho", element: <Carrinho/> }
   
 ]);
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router = {Router} />
+        <CarrinhoProvider>
+          <RouterProvider router={Router} />
+      </CarrinhoProvider>
   </StrictMode>,
 )

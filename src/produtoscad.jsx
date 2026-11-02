@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './produtoscad.css';
+import Avaliacao from './Avaliacao';
 
 
 // Componente reutilizável: recebe qualquer "produto" via props.
@@ -33,6 +34,7 @@ export default function Produtoscad({ produto, onAdicionar }) {
       >
         Adicionar ao carrinho
       </button>
+      <Avaliacao />
     </article>
   );
 }

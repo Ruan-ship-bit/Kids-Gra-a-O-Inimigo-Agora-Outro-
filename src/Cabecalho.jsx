@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./Cabecalho.css";
 import React from 'react'
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useCarrinho } from './ContextoCarrinho';
 // ---------- Ícones SVG ----------
 const IconeBusca = (props) => (
   <svg
@@ -63,16 +64,14 @@ const IconeUsuario = (props) => (
 
 export default function Cabecalho(props) {
   const [termoBusca, setTermoBusca] = useState("");
-  let quantidadeCarrinho = 0;
+  const { quantidadeTotal } = useCarrinho();
   const enviarBusca = (evento) => {
     evento.preventDefault();
     aoBuscar(termoBusca.trim());
   };
-  const aoBuscar = () => {
-    props.onBuscar(termoBusca); 
-
-
-  };
+ const aoBuscar = (termo) => {
+  props.onBuscar(termo); 
+};
   const aoClicarCarrinho = () => {};
   const aoClicarUsuario = () => {};
   const aoApertarEnter = (evento) => {
@@ -90,16 +89,16 @@ export default function Cabecalho(props) {
           <input type="text"  className="cabecalho__campo-busca " placeholder="Digite o que Deseja Pesquisar" onChange={(evento) => setTermoBusca(evento.target.value)} onKeyDown={aoApertarEnter}/>
           
         </nav>
-        <button
+        <Link
           type="button"
           className="cabecalho__botao"
-          onClick={aoClicarCarrinho}
-          aria-label={`Carrinho com ${quantidadeCarrinho} itens`}
+          to={"/carrinho"}
+          aria-label={`Carrinho com ${quantidadeTotal} itens`}
         >
           <IconeCarrinho />
           <span className="cabecalho__texto-carrinho">Carrinho</span>
-          <span className="cabecalho__contador">{quantidadeCarrinho}</span>
-        </button>
+          <span className="cabecalho__contador">{quantidadeTotal}</span>
+        </Link>
 
        
         <Link

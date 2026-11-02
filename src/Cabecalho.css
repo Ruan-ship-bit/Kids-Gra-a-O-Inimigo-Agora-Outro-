@@ -74,6 +74,7 @@
   color: #ffffff;
   font-family: inherit;
   cursor: pointer;
+  text-decoration: none;
 }
  
 .cabecalho__botao:focus-visible {

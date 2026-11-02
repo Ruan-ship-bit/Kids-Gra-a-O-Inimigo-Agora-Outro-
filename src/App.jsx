@@ -4,11 +4,11 @@ import './App.css'
 import Cabecalho from './Cabecalho'
 import  Produtoscad from './produtoscad'
 import { ListaProdutos } from './dados/projetos';
-
+import { useCarrinho } from './ContextoCarrinho';
 
 function App() {
 
-  function adicionar(produto) {alert(`Você adicionou: ${produto.nome}`);}
+  const { adicionarProduto, quantidadeTotal } = useCarrinho();
   const [termoBusca, setTermoBusca ] = useState("");
 
   function aoBuscar(termo) {
@@ -37,7 +37,7 @@ function App() {
             <Produtoscad
               key={p.id}
               produto={p}
-              onAdicionar={adicionar}
+              onAdicionar={adicionarProduto}
             />
           ))
         )}
