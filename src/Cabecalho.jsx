@@ -68,15 +68,26 @@ export default function Cabecalho(props) {
     evento.preventDefault();
     aoBuscar(termoBusca.trim());
   };
-  const aoBuscar = () => {};
+  const aoBuscar = () => {
+    props.onBuscar(termoBusca); 
+
+
+  };
   const aoClicarCarrinho = () => {};
   const aoClicarUsuario = () => {};
+  const aoApertarEnter = (evento) => {
+   
+    if (evento.key === 'Enter') {
+      enviarBusca(evento);
+    }
+   
+  }
   return (
     <header className="cabecalho">
         <div className="cabecalho__logo"> </div>
         <nav className="cabecalho__busca">
           <IconeBusca/> 
-          <input type="text"  className="cabecalho__campo-busca " placeholder="Digite o que Deseja Pesquisar"/>
+          <input type="text"  className="cabecalho__campo-busca " placeholder="Digite o que Deseja Pesquisar" onChange={(evento) => setTermoBusca(evento.target.value)} onKeyDown={aoApertarEnter}/>
           
         </nav>
         <button
