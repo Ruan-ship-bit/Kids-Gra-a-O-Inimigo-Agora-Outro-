@@ -27,7 +27,7 @@ function App() {
       <div>
         <Cabecalho onBuscar = {aoBuscar}/>
               <main className="lista">
-        {/* 5. Onde você adiciona o código: Substituindo o map antigo */}
+       
         {produtosFiltrados.length === 0 ? (
           <p style={{ gridColumn: "1 / -1", textAlign: "center", fontSize: "1.2rem", marginTop: "20px" }}>
             Nenhum produto encontrado para "{termoBusca}" 
