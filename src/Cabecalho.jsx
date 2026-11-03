@@ -72,8 +72,7 @@ export default function Cabecalho(props) {
  const aoBuscar = (termo) => {
   props.onBuscar(termo); 
 };
-  const aoClicarCarrinho = () => {};
-  const aoClicarUsuario = () => {};
+  
   const aoApertarEnter = (evento) => {
    
     if (evento.key === 'Enter') {
